@@ -12,11 +12,11 @@
 <body>
     <header>
         <p><a href="#">View High Scores</a></p>
-        <p>Time Left: </p>
+        <p class="timer" id="timer"></p>
     </header>
 
     <main>
-        <div class="intro">
+        <div class="intro" id="intro">
             <h1 class="intro-title">Coding Quiz Challenge</h1>
 
             <p>
@@ -27,16 +27,16 @@
             <button class="start-btn">Start Quiz</button>
         </div>
 
-        <div class="quiz">
+        <div class="quiz" id="quiz">
             <div class="question">
                 <h2>Sample Question</h2>
             </div>
 
             <div class="answers">
-                <button class="choice1">sample choice 1</button>
-                <button class="choice2">sample choice 2</button>
-                <button class="choice3">sample choice 3</button>
-                <button class="choice4">sample choice 4</button>
+                <button id="choice1">sample choice 1</button>
+                <button id="choice2">sample choice 2</button>
+                <button id="choice3">sample choice 3</button>
+                <button id="choice4">sample choice 4</button>
             </div>
 
             <div class="response">
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="quiz-over">
+        <div class="quiz-over" id="quiz-over">
             <h2>All done!</h2>
             <p>
                 Your final score is: 
@@ -54,7 +54,7 @@
             <button type="submit">Submit</button>
         </div>
 
-        <div class="high-scores">
+        <div class="high-scores" id="high-scores">
             <h2>High Scores</h2>
             <div class="score-list">sample</div>
             <div class="score-list">sample</div>
