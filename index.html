@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css" />
     <title>Coding Quiz Challenge</title>
 </head>
+
 <body>
     <header>
         <p><a href="#">View High Scores</a></p>
@@ -13,22 +16,60 @@
     </header>
 
     <main>
-        <div class="question">
+        <div class="intro">
+            <h1 class="intro-title">Coding Quiz Challenge</h1>
 
-        </div>
-        <div class="answers">
-            <button class="choice1"></button>
-            <button class="choice2"></button>
-            <button class="choice3"></button>
-            <button class="choice4"></button>   
-        </div>
-        <div class="response">
+            <p>
+                Answer the questions within the time limit. If you choose the incorrect answer, you will be penalized 10
+                seconds. Try to beat the high score!
+            </p>
 
+            <button class="start-btn">Start Quiz</button>
         </div>
+
+        <div class="quiz">
+            <div class="question">
+                <h2>Sample Question</h2>
+            </div>
+
+            <div class="answers">
+                <button class="choice1">sample choice 1</button>
+                <button class="choice2">sample choice 2</button>
+                <button class="choice3">sample choice 3</button>
+                <button class="choice4">sample choice 4</button>
+            </div>
+
+            <div class="response">
+                <h3>Sample Response</h3>
+            </div>
+        </div>
+
+        <div class="quiz-over">
+            <h2>All done!</h2>
+            <p>
+                Your final score is: 
+            </p>
+            <label for="input">Enter initials:</label>
+            <input type="text" />
+            <button type="submit">Submit</button>
+        </div>
+
+        <div class="high-scores">
+            <h2>High Scores</h2>
+            <div class="score-list">sample</div>
+            <div class="score-list">sample</div>
+            <button class="back">Go back</button>
+            <button class="clear">Clear high scores</button>
+        </div>
+
     </main>
 
     <footer>
         &copy; David Lundt
     </footer>
+
+    <script src="./assets/js/script.js"></script>
+
 </body>
+
 </html>
