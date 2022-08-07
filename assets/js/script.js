@@ -50,23 +50,21 @@ var i = 0;
 var setTimer = document.querySelector('.start-btn').addEventListener('click', function () {
     var timerEl = document.getElementById('timer');
 
-    if (timeLeft >= 0) {
-        var timeInterval = setInterval(function () {
-            if (timeLeft > 1) {
-                timerEl.textContent = 'Time Left: ' + timeLeft + ' seconds';
-                timeLeft--;
-            } else if (timeLeft === 1) {
-                timerEl.textContent = 'Time Left: ' + timeLeft + ' second';
-                timeLeft--;
-            } else {
-                timerEl.textContent = "Time's Up!";
-                clearInterval(timeInterval);
-                document.getElementById('quiz').style.display = 'none';
-                document.getElementById('response').style.display = 'none';
-                document.getElementById('quiz-over').style.display = 'block';
-            }
-        }, 1000);
-    }
+    var timeInterval = setInterval(function () {
+        if (timeLeft > 1) {
+            timerEl.textContent = 'Time Left: ' + timeLeft + ' seconds';
+            timeLeft--;
+        } else if (timeLeft === 1) {
+            timerEl.textContent = 'Time Left: ' + timeLeft + ' second';
+            timeLeft--;
+        } else {
+            timerEl.textContent = "Time's Up!";
+            clearInterval(timeInterval);
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('response').style.display = 'none';
+            document.getElementById('quiz-over').style.display = 'block';
+        }
+    }, 1000);
 });
 
 // Hide intro and display quiz div when "Start Quiz" button is clicked
@@ -95,17 +93,18 @@ function showQuestions() {
 document.getElementById('quiz').onclick = function (e) {
     e.preventDefault();
 
-
     if (e.target.innerText === questions[0].answer) {
         document.getElementById("response").innerHTML =
             "<h3>Correct</h3>"
     } else if (!e.target.querySelector("button")) {
         document.getElementById("response").innerHTML =
             "<h3>Wrong</h3>";
+        timeLeft = timeLeft - 10;
     }
+
     for (var i = 0; i < questions.length; i++) {
-        console.log(questions[i]);        
-    }  
+        console.log(questions[i]);
+    }
 };
 
 // View high scores when "View High Scores" element is clicked
@@ -120,6 +119,39 @@ var viewHighScores = document.getElementById('view-hs').addEventListener('click'
     document.getElementById('timer').style.display = 'none';
 });
 
+
+
+// submit high score
+var highScore = document.getElementById('submit').addEventListener('click', function () {
+    var initialsEl = document.getElementById('initials').value;
+
+    document.getElementById('score').textContent = timeLeft;
+    document.getElementById('score-list').innerHTML =
+        `<div class="scores">${initialsEl}: ${timeLeft}</div>`;
+
+    document.getElementById('quiz-over').style.display = 'none';
+    document.getElementById('high-scores').style.display = 'block';
+
+    console.log(initialsEl);
+
+    saveScores();
+});
+
+// save high scores to localStorage
+var saveScores = function() {
+    localStorage.setItem('highScore', JSON.stringify(highScore));
+};
+
+// load highScores from localStorage
+var loadScores = function() {
+
+};
+
+// clear high scores
+document.getElementById('clear-hs').onclick =
+localStorage.clear();
+
+// go back button
 var goToStart = document.getElementById('go-back').addEventListener('click', function () {
     location.reload();
 });
