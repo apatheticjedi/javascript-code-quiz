@@ -91,6 +91,10 @@ button {
 
 .quiz-over input {
     background-color: white;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .high-scores {
@@ -102,6 +106,7 @@ button {
     background-color: var(--quaternary-color);
     padding: 5px 5px;
     margin: 5px;
+    border-radius: 5px;
 }
 
 footer {
