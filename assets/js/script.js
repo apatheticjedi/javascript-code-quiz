@@ -109,7 +109,6 @@ document.getElementById('quiz').onclick = function (e) {
     }
 };
 
-
 function endGame() {
     clearInterval(timeInterval);
     document.getElementById('quiz').style.display = 'none';
@@ -136,13 +135,10 @@ var highScore = document.getElementById('submit').addEventListener('click', func
     var initialsEl = document.getElementById('initials').value;
 
     document.getElementById('score').textContent = timeLeft;
-    // document.getElementById('score-list').innerHTML =
-    //     `<div class="scores">${initialsEl}: ${timeLeft}</div>`;
 
     document.getElementById('quiz-over').style.display = 'none';
     document.getElementById('high-scores').style.display = 'block';
 
-    console.log(initialsEl);
     var newScore = { initials: initialsEl, score: timeLeft };
     highScores.push(newScore);
     saveScores();
@@ -172,7 +168,6 @@ document.getElementById('clear-hs').addEventListener('click', function () {
         "";
     highScores = [];
 });
-
 
 // go back button
 var goToStart = document.getElementById('go-back').addEventListener('click', function () {

@@ -1,42 +1,21 @@
-# 04 Web APIs: Code Quiz
+# JavaScript Coding Quiz
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. For this challenge, you will build a timed code quiz that's made up of multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+## About This Project
 
-## User Story
+![Quiz Screen Shot](./assets/images/screencapture-localhost-52330-index-html-2022-08-07-15_58_41.png)
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+This is a quiz program written in JavaScript with boilerplate questions about JavaScript that can be easily modified for any topic. Once you click the "Start Quiz" button, you will be presented with a series of questions and a timer. If you choose an incorrect answer, you will be deducted 10 seconds. If you run out of time or finish all the questions, you are presented with an end game screen where your initials can be entered and displayed on a High Scores page. Entered initials and scores are saved to localStorage and retrieved for the list of high scores.
 
-## Acceptance Criteria
+## Built With
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the Start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
-```
+* HTML
+* CSS
+* JavaScript
 
-The following animation demonstrates the application functionality:
+## Website URL
 
-![Demonstration of the Coding Quiz Challenge.](./Assets/04-web-apis-homework-demo.gif)
+https://apatheticjedi.github.io/javascript-code-quiz/
 
-### Review
+##
 
-You are required to submit the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+Created by David Lundt
