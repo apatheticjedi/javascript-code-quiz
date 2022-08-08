@@ -44,7 +44,6 @@ var questions = [
     },
 ];
 var timeLeft = 60;
-// var i = 0;
 var questionIndex = 0;
 var timeInterval;
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -109,10 +108,10 @@ document.getElementById('quiz').onclick = function (e) {
     }
 };
 
+// end quiz and display the quiz-over div
 function endGame() {
     clearInterval(timeInterval);
     document.getElementById('quiz').style.display = 'none';
-    document.getElementById('response').style.display = 'none';
     document.getElementById('quiz-over').style.display = 'block';
     document.getElementById('score').textContent = timeLeft;
 }
@@ -139,7 +138,11 @@ var highScore = document.getElementById('submit').addEventListener('click', func
     document.getElementById('quiz-over').style.display = 'none';
     document.getElementById('high-scores').style.display = 'block';
 
-    var newScore = { initials: initialsEl, score: timeLeft };
+    var newScore = { 
+        initials: initialsEl, 
+        score: timeLeft 
+    };
+
     highScores.push(newScore);
     saveScores();
     loadScores();
@@ -164,12 +167,11 @@ var loadScores = function () {
 // clear high scores
 document.getElementById('clear-hs').addEventListener('click', function () {
     localStorage.clear();
-    document.getElementById('score-list').innerHTML =
-        "";
+    document.getElementById('score-list').innerHTML = "";
     highScores = [];
 });
 
-// go back button
+// go back button, refresh page
 var goToStart = document.getElementById('go-back').addEventListener('click', function () {
     location.reload();
 });
