@@ -81,10 +81,10 @@ function showQuestions() {
                 <h2>${questions[questionIndex].title}</h2>
             </div>
             <div class="answers">
-                <button>${questions[questionIndex].choices[0]}</button>
-                <button>${questions[questionIndex].choices[1]}</button>
-                <button>${questions[questionIndex].choices[2]}</button>
-                <button>${questions[questionIndex].choices[3]}</button>
+                <button class="choices">${questions[questionIndex].choices[0]}</button>
+                <button class="choices">${questions[questionIndex].choices[1]}</button>
+                <button class="choices">${questions[questionIndex].choices[2]}</button>
+                <button class="choices">${questions[questionIndex].choices[3]}</button>
             </div>`
 };
 
@@ -92,19 +92,21 @@ function showQuestions() {
 document.getElementById('quiz').onclick = function (e) {
     e.preventDefault();
 
-    if (e.target.innerText === questions[questionIndex].answer) {
-        document.getElementById("response").innerHTML =
-            "<h3>Correct</h3>"
-    } else {
-        document.getElementById("response").innerHTML =
-            "<h3>Wrong</h3>";
-        timeLeft = timeLeft - 10;
-    }
-    questionIndex++;
-    if (questionIndex < questions.length) {
-        showQuestions();
-    } else {
-        endGame();
+    if (e.target.matches(".choices")) {
+        if (e.target.innerText === questions[questionIndex].answer) {
+            document.getElementById("response").innerHTML =
+                "<h3>Correct</h3>"
+        } else {
+            document.getElementById("response").innerHTML =
+                "<h3>Wrong</h3>";
+            timeLeft = timeLeft - 10;
+        }
+        questionIndex++;
+        if (questionIndex < questions.length) {
+            showQuestions();
+        } else {
+            endGame();
+        }
     }
 };
 
@@ -138,9 +140,9 @@ var highScore = document.getElementById('submit').addEventListener('click', func
     document.getElementById('quiz-over').style.display = 'none';
     document.getElementById('high-scores').style.display = 'block';
 
-    var newScore = { 
-        initials: initialsEl, 
-        score: timeLeft 
+    var newScore = {
+        initials: initialsEl,
+        score: timeLeft
     };
 
     highScores.push(newScore);
