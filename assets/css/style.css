@@ -115,3 +115,10 @@ footer {
     bottom: 10px;
     margin: 0px 20px;
 }
+
+@media screen and (max-width: 575px) {
+    .answers{
+        width: 55%;
+    }
+    
+}

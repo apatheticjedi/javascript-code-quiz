@@ -132,8 +132,9 @@ var viewHighScores = document.getElementById('view-hs').addEventListener('click'
 });
 
 // submit high score
-var highScore = document.getElementById('submit').addEventListener('click', function () {
-    var initialsEl = document.getElementById('initials').value;
+document.getElementById('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    var initialsEl = document.getElementById('initials').value.toUpperCase();
 
     document.getElementById('score').textContent = timeLeft;
 

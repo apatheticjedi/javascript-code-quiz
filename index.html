@@ -42,9 +42,11 @@
             <p>
                 Your final score is: <span id="score"></span>
             </p>
-            <label for="input">Enter initials:</label>
-            <input type="text" id="initials" />
-            <button type="submit" id="submit">Submit</button>
+            <form id="form">
+                <label for="input">Enter initials:</label>
+                <input type="text" id="initials" required pattern="[A-Za-z]{1,5}" placeholder="AAA" title="Enter 1 to 5 initials">
+                <button type="submit" id="submit">Submit</button>
+             </form>   
         </div>
 
         <!-- High scores screen -->
